@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Washer_Nav } from './nav';
 //import Halls from './places';
 
@@ -9,7 +9,7 @@ import { Washer_Nav } from './nav';
 
 export default function App() {
   return (
-    <View>
+    <View style={styles.container}>
       <Washer_Nav/>
     </View>
   );
@@ -18,8 +18,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: 'white',
     justifyContent: 'center',
   },
 });

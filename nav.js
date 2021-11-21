@@ -1,21 +1,25 @@
 
 import React from 'react';
-import {Button, View, StyleSheet,Dimensions, Text} from 'react-native';
+import {Button, View, StyleSheet,Dimensions, Text, Image, ScrollView} from 'react-native';
 
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Washer from './info';
+import Dryer from './dryer_info';
 
 
 const QuestionStack = createNativeStackNavigator();
 <QuestionStack.Navigator screenOptions={{headerShown: false}}></QuestionStack.Navigator>
 
 
+
+
 const Welcomescreen = ({ navigation }) => {
   return(
-    <View style = {new_styles.welcome}>
-      <Text>Welcome</Text>
-      <Button
+    <View style = {styles.container}>
+      <Button style = {styles.button}
         title="East"
         onPress={() => navigation.navigate('East')}  
       />
@@ -52,80 +56,191 @@ const Welcomescreen = ({ navigation }) => {
 }
 
 
+
 const East = ({ navigation, props }) => {
-  return (
-    <View style = {new_styles.stylize}>
-      <Text>East</Text>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
       
     </View>
+    )
     
-  );
 };
+
+const Washer2=() =>{
+    var washer = [];
+
+
+
+    for (let i = 1; i < 5; i++) {
+    washer.push(
+        <View key={i}>
+        <Text style={styles.text}> Washer {i} : </Text>
+        <Washer/>
+        </View>
+    );
+    }
+    return(
+        <View>
+            <ScrollView>
+                {washer}
+            </ScrollView>
+        </View>
+        
+    )
+}
+
+const Dryer2=() =>{
+    var dryer = [];
+
+    for (let i = 5; i < 9; i++) {
+    dryer.push(
+        <View key={i}>
+        <Text style={styles.text}> Dryer {i} : </Text>
+        <Dryer/>
+        </View>
+    );
+    }
+    return(
+        <View>
+            <ScrollView>
+                {dryer}
+            </ScrollView>
+        </View>
+        
+    )
+}
+
+
 
 
 const Walz = ({ navigation}) => {
-  return (
-    <View style = {new_styles.stylize}>
-      <Text>Walz</Text>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
     </View>
-    
-  );
+    )
 };
 
-//<Q1 navigate={navigation.navigate}/>
+
 const Brown = ({ navigation}) => {
-  return (
-    <View style = {new_styles.checkboxes}>
-      <Text>brown</Text>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
     </View>
-    
-  );
+    )
 };
 
 
 const ML = ({navigation}) => {
-  return(
-    <View style = {new_styles.checkboxes}>
-      <Text>ML</Text>
-    </View>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
 
-  );
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
 };
 
 const Prosser = ({navigation}) => {
-  return(
-    <View style = {new_styles.checkboxes}>
-      <Text>Prosser</Text>
-    </View>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
 
-  );
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
 };
 
 const Robertson = ({navigation}) => {
-  return(
-    <View style = {new_styles.drop_down}> 
-      <Text>Robertson</Text>
-    </View>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
 
-  );
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
 };
 
 const Taylor = ({navigation}) => {
-  return(
-    <View style = {new_styles.checkboxes}>
-       <Text>Taylor</Text>
-    </View>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
 
-  );
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
 };
 
 const South = ({navigation}) => {
-  return(
-    <View style = {new_styles.checkboxes}>
-      <Text>South</Text>
-    </View>
+    return(
+        <View >
+        <Button
+        title="Washer"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
 
-  );
+        <Button
+        title="Dryer"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
 };
 
 
@@ -142,6 +257,9 @@ export function Washer_Nav() {
         <QuestionStack.Screen name="Robertson" component={Robertson} />
         <QuestionStack.Screen name="Taylor" component={Taylor} />
         <QuestionStack.Screen name="South" component={South} />
+        <QuestionStack.Screen name="Washer2" component={Washer2} />
+        <QuestionStack.Screen name="Dryer2" component={Dryer2} />
+        
 
       
       </QuestionStack.Navigator>
@@ -150,93 +268,24 @@ export function Washer_Nav() {
 }
 export default Washer_Nav;
 
-const new_styles = StyleSheet.create({
-  image: {
-    width: 300,
-    height: 300,
-    margin: 20,
-    borderColor: 'black',
-    borderWidth: 1,
-  
-    
-  },
-  text:{
-    fontSize: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  button:{
-    backgroundColor: '#ff9f7f',
-    padding: 10,
-    alignItems: 'center',
-    flexDirection: "row",
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 350,
-  },
-
-  welcome: {
-    flex: 1, //flexible
-    backgroundColor: '#9BD1D1',
-    //justifyContent: 'center',
-    alignItems: 'center',
-    
-  },
-
-  stylize: {
-    flex: 1, //flexible
-    backgroundColor: '#9BD1D1',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  checkboxes: {
-    flex: 1, //flexible
-    fontSize: 30,
-    backgroundColor: '#9BD1D1',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  drop_down: {
-    flex: 1, //flexible
-    //fontSize: 30,
-    backgroundColor: '#9BD1D1',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  navbar: {
-    width: Dimensions.get("screen").width,
-    height: Dimensions.get("screen").height*0.1,
-    backgroundColor: "#b1b1b1",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems:"center",
-    top: Dimensions.get("screen").height*0.84,
-    zIndex: 10,
-    position:"absolute",
-  },
-
-  other_navbar: {
-    width: Dimensions.get("screen").width,
-    height: Dimensions.get("screen").height*0.1,
-    backgroundColor: "#b1b1b1",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems:"center",
-    top: Dimensions.get("screen").height*0.78,
-    zIndex: 10,
-    position:"absolute",
-  },
-
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#000',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+
   },
+
+  button: {
+    marginBottom: 20,
+
+  },
+
+  text: {
+      fontSize: 30,
+      
+  }
 
 
   
