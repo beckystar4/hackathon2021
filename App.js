@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Halls from './places';
+import { Washer_Nav } from './nav';
+//import Halls from './places';
+
+
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Halls/>
+    <View>
+      <Washer_Nav/>
     </View>
   );
 }
