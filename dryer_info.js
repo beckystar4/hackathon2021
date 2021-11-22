@@ -13,6 +13,7 @@ export const Dryer = (props) => {
             
             <Button
                 title="open"
+                color="black"
                 onPress={()=>
                     setState('Open')
                     }
@@ -22,6 +23,7 @@ export const Dryer = (props) => {
 
             <Button
                 title="broken"
+                color="black"
                 onPress={()=>
                     setState('Broken')
                     }
@@ -31,6 +33,7 @@ export const Dryer = (props) => {
 
             <Button
                 title="used"
+                color="black"
                 onPress={()=>
                     setState('Used')
                     }

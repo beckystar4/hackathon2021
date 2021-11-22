@@ -1,11 +1,11 @@
 
 import React from 'react';
-import {Button, View, StyleSheet,Dimensions, Text, Image, ScrollView} from 'react-native';
+import {Button, View, StyleSheet,Dimensions, Text, Image, ScrollView, TouchableHighlight} from 'react-native';
+
 
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import Washer from './info';
 import Dryer from './dryer_info';
 
@@ -19,47 +19,78 @@ const QuestionStack = createNativeStackNavigator();
 const Welcomescreen = ({ navigation }) => {
   return(
     <View style = {styles.container}>
-      <Button style = {styles.button}
-        title="East"
-        onPress={() => navigation.navigate('East')}  
-      />
-      <Button
-        title="Walz"
-        onPress={() => navigation.navigate('Walz')}  
-      />
-      <Button
+        <Button
         title="Brown"
+        color="black"
         onPress={() => navigation.navigate('Brown')}  
       />
+      <Button 
+        title="East"
+        color="black"
+        onPress={() => navigation.navigate('East')}  
+      />
+      
       <Button
         title="Martin Luther"
+        color="black"
         onPress={() => navigation.navigate('ML')}  
       />
       <Button
         title="Prosser"
+        color="black"
         onPress={() => navigation.navigate('Prosser')}  
       />
       <Button
         title="Robertson"
+        color="black"
         onPress={() => navigation.navigate('Robertson')}  
+      />
+      
+      <Button
+        title="South"
+        color="black"
+        onPress={() => navigation.navigate('South')}  
       />
       <Button
         title="Taylor"
+        color="black"
         onPress={() => navigation.navigate('Taylor')}  
       />
-      <Button
-        title="South"
-        onPress={() => navigation.navigate('South')}  
+      <Button 
+        title="Walz"
+        color="black"
+        onPress={() => navigation.navigate('Walz')}  
       />
+      <Button 
+        title="I don't need this app"
+        color="black"
+        onPress={() => navigation.navigate('Boo')}  
+      />
+      
     </View>
   )
 }
 
+const Boo = ({ navigation, props }) => {
+    return(
+     <View style={styles.container}>
+         <TouchableHighlight onPress={() => alert('The washers will never give you up')}>
+            <Image source={{ 
+            width: 200,
+            height: 300,
+            uri: "https://images2.minutemediacdn.com/image/upload/c_crop,h_1613,w_2400,x_0,y_116/v1628703164/shape/mentalfloss/649273-youtube-rick_astley.jpg?itok=QClct2O0" }}/>
+      </TouchableHighlight >
+    
+    
+    </View>
+    )
+    
+};
 
 
 const East = ({ navigation, props }) => {
     return(
-        <View >
+        <View style = {styles.container}>
         <Button
         title="Washer"
         onPress={() => navigation.navigate('Washer2')}  
@@ -75,6 +106,143 @@ const East = ({ navigation, props }) => {
     
 };
 
+
+
+const Walz = ({ navigation}) => {
+    return(
+        <View style = {styles.container}>
+        <Button
+        title="Washer"
+        color="black"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        color="black"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
+};
+
+
+const Brown = ({ navigation}) => {
+    return(
+        <View style = {styles.container}>
+        <Button
+        title="Washer"
+        color="black"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        color="black"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
+};
+
+
+const ML = ({navigation}) => {
+    return(
+        <View style = {styles.container}>
+        <Button
+        title="Washer"
+        color="black"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        color="black"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
+};
+
+const Prosser = ({navigation}) => {
+    return(
+        <View style = {styles.container}>
+        <Button
+        title="Washer"
+        color="black"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        color="black"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
+};
+
+const Robertson = ({navigation}) => {
+    return(
+        <View style = {styles.container}>
+        <Button
+        title="Washer"
+        color="black"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        color="black"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
+};
+
+const Taylor = ({navigation}) => {
+    return(
+        <View style = {styles.container}>
+        <Button
+        title="Washer"
+        color="black"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        color="black"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
+};
+
+const South = ({navigation}) => {
+    return(
+        <View style = {styles.container}>
+        <Button
+        title="Washer"
+        color="black"
+        onPress={() => navigation.navigate('Washer2')}  
+        ></Button>
+
+        <Button
+        title="Dryer"
+        color="black"
+        onPress={() => navigation.navigate('Dryer2')}  
+        ></Button>
+      
+    </View>
+    )
+};
+
 const Washer2=() =>{
     var washer = [];
 
@@ -82,7 +250,7 @@ const Washer2=() =>{
 
     for (let i = 1; i < 5; i++) {
     washer.push(
-        <View key={i}>
+        <View style={styles.container} key={i}>
         <Text style={styles.text}> Washer {i} : </Text>
         <Washer/>
         </View>
@@ -103,15 +271,15 @@ const Dryer2=() =>{
 
     for (let i = 5; i < 9; i++) {
     dryer.push(
-        <View key={i}>
+        <View style={styles.container} key={i}>
         <Text style={styles.text}> Dryer {i} : </Text>
         <Dryer/>
         </View>
     );
     }
     return(
-        <View>
-            <ScrollView>
+        <View  >
+            <ScrollView >
                 {dryer}
             </ScrollView>
         </View>
@@ -119,129 +287,6 @@ const Dryer2=() =>{
     )
 }
 
-
-
-
-const Walz = ({ navigation}) => {
-    return(
-        <View >
-        <Button
-        title="Washer"
-        onPress={() => navigation.navigate('Washer2')}  
-        ></Button>
-
-        <Button
-        title="Dryer"
-        onPress={() => navigation.navigate('Dryer2')}  
-        ></Button>
-      
-    </View>
-    )
-};
-
-
-const Brown = ({ navigation}) => {
-    return(
-        <View >
-        <Button
-        title="Washer"
-        onPress={() => navigation.navigate('Washer2')}  
-        ></Button>
-
-        <Button
-        title="Dryer"
-        onPress={() => navigation.navigate('Dryer2')}  
-        ></Button>
-      
-    </View>
-    )
-};
-
-
-const ML = ({navigation}) => {
-    return(
-        <View >
-        <Button
-        title="Washer"
-        onPress={() => navigation.navigate('Washer2')}  
-        ></Button>
-
-        <Button
-        title="Dryer"
-        onPress={() => navigation.navigate('Dryer2')}  
-        ></Button>
-      
-    </View>
-    )
-};
-
-const Prosser = ({navigation}) => {
-    return(
-        <View >
-        <Button
-        title="Washer"
-        onPress={() => navigation.navigate('Washer2')}  
-        ></Button>
-
-        <Button
-        title="Dryer"
-        onPress={() => navigation.navigate('Dryer2')}  
-        ></Button>
-      
-    </View>
-    )
-};
-
-const Robertson = ({navigation}) => {
-    return(
-        <View >
-        <Button
-        title="Washer"
-        onPress={() => navigation.navigate('Washer2')}  
-        ></Button>
-
-        <Button
-        title="Dryer"
-        onPress={() => navigation.navigate('Dryer2')}  
-        ></Button>
-      
-    </View>
-    )
-};
-
-const Taylor = ({navigation}) => {
-    return(
-        <View >
-        <Button
-        title="Washer"
-        onPress={() => navigation.navigate('Washer2')}  
-        ></Button>
-
-        <Button
-        title="Dryer"
-        onPress={() => navigation.navigate('Dryer2')}  
-        ></Button>
-      
-    </View>
-    )
-};
-
-const South = ({navigation}) => {
-    return(
-        <View >
-        <Button
-        title="Washer"
-        onPress={() => navigation.navigate('Washer2')}  
-        ></Button>
-
-        <Button
-        title="Dryer"
-        onPress={() => navigation.navigate('Dryer2')}  
-        ></Button>
-      
-    </View>
-    )
-};
 
 
 export function Washer_Nav() {
@@ -259,6 +304,8 @@ export function Washer_Nav() {
         <QuestionStack.Screen name="South" component={South} />
         <QuestionStack.Screen name="Washer2" component={Washer2} />
         <QuestionStack.Screen name="Dryer2" component={Dryer2} />
+        <QuestionStack.Screen name="Boo" component={Boo} />
+       
         
 
       
@@ -270,7 +317,7 @@ export default Washer_Nav;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: '#1EA1A1',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
@@ -278,7 +325,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    marginBottom: 20,
+    padding: 10,
 
   },
 

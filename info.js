@@ -4,20 +4,22 @@ import React, {useState}  from 'react';
 import {Button, View, StyleSheet,Dimensions, Text, Image, ScrollView} from 'react-native';
 
 
-export const Washer = (props) => {
-   
 
-    const [state, setState] = useState('')
+export const Washer = (props) => {
+  
+
+    const [state, setState] = useState('Open')
     
-    {state== ''? setState('Open'):  null}
+    
     return (
-      <View>
+      <View >
           <Text style = {styles.title_text}> {state}</Text>
             
             <Button
                 title="open"
+                color="black"
                 onPress={()=>
-                    
+                
                     setState('Open')
                     }
             >
@@ -26,6 +28,7 @@ export const Washer = (props) => {
 
             <Button
                 title="broken"
+                color="black"
                 onPress={()=>
                     
                     setState('Broken')
@@ -36,6 +39,7 @@ export const Washer = (props) => {
 
             <Button
                 title="used"
+                color="black"
                 onPress={()=>
                     
                     setState('Used')
@@ -68,6 +72,12 @@ export const Washer = (props) => {
       borderWidth: 1,
       borderRadius: 350,
     },
+    container: {
+        backgroundColor: '#1EA1A1',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
     
+      },
   })
   export default Washer;
