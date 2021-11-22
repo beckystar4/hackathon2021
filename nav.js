@@ -1,12 +1,11 @@
 
 import React from 'react';
-import {Button, View, StyleSheet,Dimensions, Text, Image, ScrollView} from 'react-native';
+import {Button, View, StyleSheet,Dimensions, Text, Image, ScrollView, TouchableHighlight} from 'react-native';
 
 
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import Washer from './info';
 import Dryer from './dryer_info';
 
@@ -62,10 +61,31 @@ const Welcomescreen = ({ navigation }) => {
         color="black"
         onPress={() => navigation.navigate('Walz')}  
       />
+      <Button 
+        title="I don't need this app"
+        color="black"
+        onPress={() => navigation.navigate('Boo')}  
+      />
       
     </View>
   )
 }
+
+const Boo = ({ navigation, props }) => {
+    return(
+     <View style={styles.container}>
+         <TouchableHighlight onPress={() => alert('The washers will never give you up')}>
+            <Image source={{ 
+            width: 200,
+            height: 300,
+            uri: "https://images2.minutemediacdn.com/image/upload/c_crop,h_1613,w_2400,x_0,y_116/v1628703164/shape/mentalfloss/649273-youtube-rick_astley.jpg?itok=QClct2O0" }}/>
+      </TouchableHighlight >
+    
+    
+    </View>
+    )
+    
+};
 
 
 const East = ({ navigation, props }) => {
@@ -284,6 +304,7 @@ export function Washer_Nav() {
         <QuestionStack.Screen name="South" component={South} />
         <QuestionStack.Screen name="Washer2" component={Washer2} />
         <QuestionStack.Screen name="Dryer2" component={Dryer2} />
+        <QuestionStack.Screen name="Boo" component={Boo} />
        
         
 
